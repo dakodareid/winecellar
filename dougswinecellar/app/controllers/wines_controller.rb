@@ -69,6 +69,6 @@ class WinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wine_params
-      params.require(:wine).permit(:name, :purchased, :year, :location_made, :points, :description, :release_date, :quantity, :price, :consumed, :consumed_date, :type, :image)
+      params.require(:wine).permit(:name, :purchased, :year, :location_made, :points, :description, :release_date, :quantity, :price, :consumed, :consumed_date, :wine_type, :image)
     end
 end
