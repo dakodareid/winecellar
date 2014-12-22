@@ -13,57 +13,57 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
   </div>
   <div class="field">
     <%= f.label :purchased %><br>
-    <%= f.date_select :purchased %>
+    <%= f.date_select :purchased, class: 'form-control', placeholder: 'When date was it bought?' %>
   </div>
   <div class="field">
     <%= f.label :year %><br>
-    <%= f.number_field :year %>
+    <%= f.number_field :year, class: 'form-control', placeholder: 'What year was it bought?' %>
   </div>
   <div class="field">
     <%= f.label :location_made %><br>
-    <%= f.text_field :location_made %>
+    <%= f.text_field :location_made, class: 'form-control', placeholder: 'Where was it made?' %>
   </div>
   <div class="field">
     <%= f.label :points %><br>
-    <%= f.number_field :points %>
+    <%= f.number_field :points, class: 'form-control', placeholder: 'Points' %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Tell us a bit about it' %>
   </div>
   <div class="field">
     <%= f.label :release_date %><br>
-    <%= f.date_select :release_date %>
+    <%= f.date_select :release_date, class: 'form-control', placeholder: 'Date released' %>
   </div>
   <div class="field">
     <%= f.label :quantity %><br>
-    <%= f.number_field :quantity %>
+    <%= f.number_field :quantity, class: 'form-control', placeholder: 'How many?' %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, class: 'form-control', placeholder: 'Price (no decimals)' %>
   </div>
   <div class="field">
     <%= f.label :consumed %><br>
-    <%= f.check_box :consumed %>
+    <%= f.check_box :consumed, class: 'form-control', placeholder: 'Has it been consumed yet?' %>
   </div>
   <div class="field">
     <%= f.label :consumed_date %><br>
-    <%= f.date_select :consumed_date %>
+    <%= f.date_select :consumed_date, class: 'form-control', placeholder: 'If yes to above, when whas it consumed?' %>
   </div>
   <div class="field">
     <%= f.label :type_of_wine %><br>
-    <%= f.text_field :wine_type %>
+    <%= f.text_field :wine_type, class: 'form-control', placeholder: 'What kind of wine is it?' %>
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
+    <%= f.text_field :image, class: 'form-control', placeholder: 'Add an image' %>
+  </div><br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add To List", class: 'btn btn-primary' %>
   </div>
 <% end %>
