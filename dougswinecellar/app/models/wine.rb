@@ -1,3 +1,3 @@
 class Wine < ActiveRecord::Base
-	mount_uploaders :images, ImageUploader
+	mount_uploader :image, ImageUploader
 end
