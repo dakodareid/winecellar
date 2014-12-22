@@ -1,81 +1,60 @@
-<div class="col-md-4"></div>
-<div class="to-the-left col-md-4">
-  <p id="notice"><%= notice %></p>
+<div class="jumbo-logo img-responsive"></div>
 
-  <p>
-    <strong><%= @wine.name %></strong>
-  </p>
+<div class="col-md-4"></div>
+<div class="to-the-left col-md-4 left-align">
+
+  <h1 class="large-heading"><%= @wine.name %></h1>
+  <hr><br>
 
   <div class="wine-show-image">
     <%= image_tag @wine.image_url %>
   </div>
 
-  <p>
-    <strong>Purchased:</strong>
-    <%= @wine.purchased %>
-  </p>
+  <h2 class="minor-bold-heading-large">Purchased:</h2>
+  <p><%= @wine.purchased %></p>
 
-  <p>
-    <strong>Year:</strong>
-    <%= @wine.year %>
-  </p>
+  <h2 class="minor-bold-heading-large">Year:</h2>
+  <p><%= @wine.year %></p>
 
-  <p>
-    <strong>Location made:</strong>
-    <%= @wine.location_made %>
-  </p>
+  <h3 class="minor-bold-heading-large">Location made:</h3>
+  <p><%= @wine.location_made %></p>
 
-  <p>
-    <strong>Points:</strong>
-    <%= @wine.points %>
-  </p>
+  <h3 class="minor-bold-heading-large">Points:</h3>
+  <p><%= @wine.points %></p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @wine.description %>
-  </p>
+  <h3 class="minor-bold-heading-large">Description:</h3>
+  <p><%= @wine.description %></p>
 
-  <p>
-    <strong>Release date:</strong>
-    <%= @wine.release_date %>
-  </p>
+  <h3 class="minor-bold-heading-large">Release date:</h3>
+  <p><%= @wine.release_date %></p>
 
-  <p>
-    <strong>Quantity:</strong>
-    <%= @wine.quantity %>
-  </p>
+  <h3 class="minor-bold-heading-large">Quantity:</h3>
+  <p><%= @wine.quantity %></p>
 
-  <p>
-    <strong>Price:</strong>
-    <%= @wine.price %>
-  </p>
+  <h3 class="minor-bold-heading-large">Price:</h3>
+  <p><%= @wine.price %></p>
 
-  <p>
-    <strong>Consumed:</strong>
-    <%= @wine.consumed %>
-  </p>
+  <h3 class="minor-bold-heading-large">Consumed:</h3>
+  <p><%= @wine.consumed %></p>
 
-  <p>
-    <strong>Wine Type:</strong>
-    <%= @wine.wine_type %>
-  </p>
+  <h3 class="minor-bold-heading-large">Wine Type:</h3>
+  <p><%= @wine.wine_type %></p><br>
 
 <%= form_for(@wine) do |f| %>
   <% if @wine.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
-
       <ul>
-      <% @wine.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @wine.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
+  <hr>
   <div class="field">
-    <%= f.label :consumed_? %>
-    <%= f.check_box :consumed, class: 'checkbox' %>
+    <%= f.label :Has_it_been_consumed_?, class: 'minor-bold-heading-large' %>
+    <%= f.check_box :consumed, class: 'checkbox ' %>
   </div>
   <!-- <div class="field"> -->
     <%#= f.label :consumed_date %><br>

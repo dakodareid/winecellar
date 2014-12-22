@@ -2,6 +2,90 @@
 @import 'bootstrap';
 @import 'wines';
 
+@font-face {
+  font-family: Cabin-Bold;
+  src: url('/fonts/Cabin-Bold.ttf');
+}
+@font-face {
+  font-family: Cabin-Regular;
+  src: url('/fonts/Cabin-Regular.ttf');
+}
+
 html {
 	text-align: center;
+	/*background-color: #efecde;*/
+}
+body {
+	color: #444444;
+	font-family: Cabin-Regular;
+}
+
+.navbar-default {
+		background-color: #efecde;
+		border: none;
+}
+
+.tan-background {
+ 	position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: image-url("background_color.jpg");
+  background-repeat:repeat;
+}
+.splash-logo {
+	background-image: image-url("splash_logo.png");
+	width: 538px;
+	height: 180px;
+	margin-bottom: 25px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.logo-background {
+	background-color: #efecde;
+	width: 100%;
+	height: 300px;
+	/*margin-top: -40px;*/
+}
+.jumbo-logo {
+	background-image: image-url("splash_logo.png");
+	width: 538px;
+	height: 180px;
+	margin-bottom: 60px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -230px;
+}
+.large-heading {
+	font-family: Cabin-Bold;
+	font-size: 2.5em;
+}
+.bold-font-heading {
+	font-family: Cabin-Bold;
+}
+.minor-bold-heading { 
+	font-family: Cabin-Bold;
+	font-size: 1.1em;
+}
+.minor-bold-heading-large { 
+	font-family: Cabin-Bold;
+	font-size: 1.4em;
+}
+
+/*BUTTONS*/
+.btn.btn-primary {
+	background-color: #667e71;
+	border: 1px #667e71 solid ;
+}
+.btn.btn-warning {
+	background-color: #CCCCCC;
+	border: 1px #CCCCCC solid ;
+}
+a {
+	color: #667e71;
 }
