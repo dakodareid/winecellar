@@ -5,7 +5,18 @@ class WinesController < ApplicationController
   # GET /wines
   # GET /wines.json
   def index
-    @wines = Wine.all
+    # @wines = Wine.all
+
+
+    @wines = if params[:search]
+      Wine.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+    else
+      Wine.order('wines.created_at DESC')
+    end
+
+    # respond_to do |format|
+    #   format.js
+    #   format.html
   end
 
   # GET /wines/1

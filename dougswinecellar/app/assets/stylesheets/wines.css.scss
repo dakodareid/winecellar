@@ -1,3 +1,22 @@
 // Place all the styles related to the wines controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wine-show-image {
+	max-height: 320px;
+	max-width: 180px;
+	border: 1px #888888 solid;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wine-show-image > img {
+	max-height: 320px;
+	max-width: 180px;
+}
+
+.to-the-left {
+	/*text-align: left;*/
+	/*margin-left: auto;*/
+	/*margin-right: auto;*/
+}

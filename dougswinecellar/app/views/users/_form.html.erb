@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
   </div>
   <div class="field">
      <%= f.label :password %><br />
-     <%= f.password_field :password %>
+     <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
   </div>
   <div class="field">
      <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation %>
-  </div>
+     <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Re-enter password' %>
+  </div><br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'signup', class: 'btn btn-primary' %>
   </div>
 <% end %>

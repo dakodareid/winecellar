@@ -1,69 +1,92 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-4"></div>
+<div class="to-the-left col-md-4">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @wine.name %>
-</p>
+  <p>
+    <strong><%= @wine.name %></strong>
+  </p>
 
-<p>
-  <strong>Purchased:</strong>
-  <%= @wine.purchased %>
-</p>
+  <div class="wine-show-image">
+    <%= image_tag @wine.image_url %>
+  </div>
 
-<p>
-  <strong>Year:</strong>
-  <%= @wine.year %>
-</p>
+  <p>
+    <strong>Purchased:</strong>
+    <%= @wine.purchased %>
+  </p>
 
-<p>
-  <strong>Location made:</strong>
-  <%= @wine.location_made %>
-</p>
+  <p>
+    <strong>Year:</strong>
+    <%= @wine.year %>
+  </p>
 
-<p>
-  <strong>Points:</strong>
-  <%= @wine.points %>
-</p>
+  <p>
+    <strong>Location made:</strong>
+    <%= @wine.location_made %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @wine.description %>
-</p>
+  <p>
+    <strong>Points:</strong>
+    <%= @wine.points %>
+  </p>
 
-<p>
-  <strong>Release date:</strong>
-  <%= @wine.release_date %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @wine.description %>
+  </p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @wine.quantity %>
-</p>
+  <p>
+    <strong>Release date:</strong>
+    <%= @wine.release_date %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @wine.price %>
-</p>
+  <p>
+    <strong>Quantity:</strong>
+    <%= @wine.quantity %>
+  </p>
 
-<p>
-  <strong>Consumed:</strong>
-  <%= @wine.consumed %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= @wine.price %>
+  </p>
 
-<p>
-  <strong>Consumed date:</strong>
-  <%= @wine.consumed_date %>
-</p>
+  <p>
+    <strong>Consumed:</strong>
+    <%= @wine.consumed %>
+  </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @wine.wine_type %>
-</p>
+  <p>
+    <strong>Wine Type:</strong>
+    <%= @wine.wine_type %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @wine.image %>
-</p>
+<%= form_for(@wine) do |f| %>
+  <% if @wine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
 
-<%= link_to 'Edit', edit_wine_path(@wine) %> |
-<%= link_to 'Back', wines_path %>
+      <ul>
+      <% @wine.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :consumed_? %>
+    <%= f.check_box :consumed, class: 'checkbox' %>
+  </div>
+  <!-- <div class="field"> -->
+    <%#= f.label :consumed_date %><br>
+    <%#= f.date_select :consumed_date, value: '2009-02-02', class: 'form-control', placeholder: 'If yes to above, when whas it consumed?' %>
+  <!-- </div><br> -->
+
+  <div class="actions">
+    <%= f.submit "Update", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+</div>
+
+<!-- <%#= link_to 'Edit', edit_wine_path(@wine) %> | -->
+<%#= link_to 'Back', wines_path %>

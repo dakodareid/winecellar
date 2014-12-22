@@ -17,43 +17,62 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          <%= link_to "Home", root_path, class: 'navbar-brand' %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
+          <!-- SEARCH -->
+          <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+              <%= form_tag wines_path, method: :get, authentication: false, id: 'search-form' do %>
+              <%= text_field_tag :search, params[:params], :input_type =>'text', :class => 'form-control', :placeholder =>'search wines' %>
+            </div> 
+            <%= submit_tag "Search", :type => 'submit', :class => 'btn btn-default' %>
+            <% end %>
           </form>
+         <!-- - - - - -->
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
+            <% if current_user %>
+              <p class="navbar-text">Hello, Doug.</p>
+            <li> 
+              <%= link_to("Log out", logout_path) unless current_page?(login_path) %>
+            </li>
+              <% else %>
+            <li>
+              <%= link_to "Log in", login_path %> 
+            </li>
+            <li>
+              <%= link_to "Sign up", new_user_path %>
+            </li>
+          <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
-
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
+  <div class="row">
+    <div class="col-md-1 col-xs-1"></div>
+    <div class="col-md-10 col-xs-10">
+      <div id="nav">
+        <%# if current_user %>
+          <%#= link_to "Edit Profile", edit_user_path(current_user.id) %>
+          <%#= link_to "Logout", :logout, method: :post %>
+        <%# else %>
+          <!-- <%#= link_to "Register", new_user_path %> | -->
+          <%#= link_to "Login", :login %>
+        <%# end %>
+      </div>
+      <div>
+        <p id="notice"><%= flash[:notice] %></p>
+        <p id="alert"><%= flash[:alert] %></p>
+      </div>
+      <%= yield %>
+    </div>
+    <div class="col-md-1 col-xs-1"></div>
   </div>
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-	<%= yield %>
+  
+	
 
 	</body>
 </html>

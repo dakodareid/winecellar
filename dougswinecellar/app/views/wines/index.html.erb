@@ -16,7 +16,6 @@
         <th>Consumed</th>
         <th>Consumed date</th>
         <th>Type</th>
-        <th>Image</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -29,17 +28,15 @@
           <td><%= wine.year %></td>
           <td><%= wine.location_made %></td>
           <td><%= wine.points %></td>
-          <td><%= wine.description %></td>
+          <td><%= wine.description.truncate(50) %></td>
           <td><%= wine.release_date %></td>
           <td><%= wine.quantity %></td>
-          <td><%= wine.price %></td>
+          <td>$<%= wine.price %></td>
           <td><%= wine.consumed %></td>
-          <td><%= wine.consumed_date %></td>
           <td><%= wine.wine_type %></td>
-          <td><%= wine.image %></td>
           <td><%= link_to 'Show', wine %></td>
           <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
-          <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
