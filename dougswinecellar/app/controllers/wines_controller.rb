@@ -1,4 +1,5 @@
 class WinesController < ApplicationController
+  before_filter :ensure_logged_in, except: [:create, :new]
   before_action :set_wine, only: [:show, :edit, :update, :destroy]
 
   # GET /wines
