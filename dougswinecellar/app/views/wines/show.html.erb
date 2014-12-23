@@ -10,35 +10,36 @@
     <%= image_tag @wine.image_url %>
   </div>
 
-  <h2 class="minor-bold-heading-large">Purchased:</h2>
-  <p><%= @wine.purchased %></p>
-
-  <h2 class="minor-bold-heading-large">Year:</h2>
+  <h2 class="minor-bold-heading-large">Year</h2>
   <p><%= @wine.year %></p>
 
-  <h3 class="minor-bold-heading-large">Location made:</h3>
+  <h3 class="minor-bold-heading-large">Location made</h3>
   <p><%= @wine.location_made %></p>
 
-  <h3 class="minor-bold-heading-large">Points:</h3>
-  <p><%= @wine.points %></p>
-
-  <h3 class="minor-bold-heading-large">Description:</h3>
+  <h3 class="minor-bold-heading-large">Description</h3>
   <p><%= @wine.description %></p>
 
-  <h3 class="minor-bold-heading-large">Release date:</h3>
+  <h3 class="minor-bold-heading-large">Wine Type</h3>
+  <p><%= @wine.wine_type %></p>
+
+  <h2 class="minor-bold-heading-large">Purchased</h2>
+  <p><%= @wine.purchased %></p>
+
+  <h3 class="minor-bold-heading-large">Points</h3>
+  <p><%= @wine.points %></p>
+
+  <h3 class="minor-bold-heading-large">Release date</h3>
   <p><%= @wine.release_date %></p>
 
-  <h3 class="minor-bold-heading-large">Quantity:</h3>
+  <h3 class="minor-bold-heading-large">Quantity</h3>
   <p><%= @wine.quantity %></p>
 
-  <h3 class="minor-bold-heading-large">Price:</h3>
+  <h3 class="minor-bold-heading-large">Price</h3>
   <p><%= @wine.price %></p>
 
-  <h3 class="minor-bold-heading-large">Consumed:</h3>
+  <h3 class="minor-bold-heading-large">Consumed</h3>
   <p><%= @wine.consumed %></p>
 
-  <h3 class="minor-bold-heading-large">Wine Type:</h3>
-  <p><%= @wine.wine_type %></p><br>
 
 <%= form_for(@wine) do |f| %>
   <% if @wine.errors.any? %>
@@ -63,6 +64,10 @@
 
   <div class="actions">
     <%= f.submit "Update", class: 'btn btn-primary' %>
+  <br>
+  <br>
+  <br>
+
   </div>
 <% end %>
 </div>
