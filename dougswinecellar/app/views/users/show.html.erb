@@ -2,11 +2,28 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
+<!-- <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
-
-
+</p> -->
+<br>
+<br>
+<h1 class="large-heading">What's Availible</h1>
+<%= bar_chart Wine.group(:consumed).count %>
+<hr>
+<br>
+<h1 class="large-heading">Wines by Name</h1>
+<%= pie_chart Wine.group(:name).count %>
+<hr>
+<br>
+<h1 class="large-heading">What You've Bought</h1>
+<%= column_chart Wine.group(:name).sum(:quantity) %>
+<hr>
+<br>
+<h1 class="large-heading">Wines by Type</h1>
+<%= pie_chart Wine.group(:wine_type).count %>
+<br>
+<br>
+<br>
 <!-- <%#= link_to 'Edit', edit_user_path(@user) %> | -->
 <%#= link_to 'Back', users_path %>
